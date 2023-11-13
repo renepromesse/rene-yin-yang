@@ -3,7 +3,7 @@
 
 RUN 
 
-git clone 
+git clone https://github.com/renepromesse/rene-yin-yang.git
 cd rene-yin-yang
 npm install
 npm run dev 
