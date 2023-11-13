@@ -6,10 +6,10 @@ import AboutMe from "../components/about";
 const HomePage=()=>{
     return(
         <>
-        <div className="h-[150vh] w-full bg-[#EFEFEF] p-5 ">
+        <div className="h-[420vh] w-full bg-[#EFEFEF]  ">
         <NavBar/>
         <Header/>
-        {/* <AboutMe/> */}
+        <AboutMe/>
         </div>
         </>
 
