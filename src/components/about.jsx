@@ -5,15 +5,20 @@ import AboutImage from "../assets/images/icons/pencilsketchadjusted-7208867 1.sv
 import Card from "./card";
 import Article from "./article";
 import { Link } from "react-router-dom";
+import ProjectDetails from "./projectDetails";
+import projectImage from "../assets/images/pexels-photo-2808402.jpeg"
+import AiImage from "../assets/images/pexels-photo-8036979.jpeg"
+import AiPowerImage from "../assets/images/pexels-photo-7773535.jpeg"
+import App from "./test";
 const AboutMe = () => {
-  const [viewArticle, setViewArticle] = useState(false);
-  const handleViewArticle = () => {
-    setViewArticle(true);
+  const [viewProjectDetails, setViewProjectDetails] = useState(false);
+  const handleViewProjectDetails = () => {
+    setViewProjectDetails(true);
   };
   return (
     <>
       <div className=" top-[43rem] absolute w-full " id="about">
-        <h1 className="font-bold text-[28px] font-roboto text-center">
+        <h1 className="font-bold text-[28px] font-roboto text-center ">
           Who is Rene?
         </h1>
         <hr className="w-32 h-[1px] mx-auto my-4 bg-black border-0 rounded" />
@@ -55,14 +60,25 @@ const AboutMe = () => {
               What has he done?
             </h1>
             <hr className="w-32 h-[1px] mx-auto my-4 bg-black border-0 rounded" />
-            <div className="flex gap-10 mt-20">
-              <Card name="card one" onClick={handleViewArticle} />
-              <Card />
-              <Card />
+            <div className="flex  gap-6 mt-20">
+              <Card name="Power of AI" onClick={handleViewProjectDetails} details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. " image={projectImage}/>
+              <Card name="AI vs Human" onClick={handleViewProjectDetails} details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. " image={AiImage}/>
+              <Card name="Natural " onClick={handleViewProjectDetails} details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. " image={AiPowerImage}/>
             </div>
+          {viewProjectDetails&& <ProjectDetails/>}
+          {viewProjectDetails && <div className="mt-10 ml-10">
+              <img
+                src={DownIcon}
+                alt=""
+                onClick={() => setViewProjectDetails(false)}
+                width={30}
+                className="m-auto"
+              />
+            </div>}
+          
           </div>
+         
         </div>
-        {viewArticle && (
           <>
             <div>
             <div className=" mt-20  ">
@@ -109,7 +125,7 @@ translated in Kinyarwanda"
                 />
               </div>
             </div>
-            <div className="mt-10 ml-10">
+            {/* <div className="mt-10 ml-10">
               <img
                 src={DownIcon}
                 alt=""
@@ -117,7 +133,7 @@ translated in Kinyarwanda"
                 width={30}
                 className="m-auto"
               />
-            </div>
+            </div> */}
           <Link to="/articles">  <div className="float-right mr-20 mt-10 " >
             <h1 className="font-bold text-[20px] font-roboto text-center">
               Explore More
@@ -125,7 +141,7 @@ translated in Kinyarwanda"
             <hr className="w-28 h-[1px] mx-auto my-4 bg-black border-0 rounded" />
           </div></Link> 
           </>
-        )}
+          {/* <App/> */}
       </div>
     </>
   );
